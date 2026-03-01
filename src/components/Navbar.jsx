@@ -35,7 +35,7 @@ const Navbar = () => {
         </div>
       </div>
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 animate-in slide-in-from-top duration-300">
+        <div className="md:hidden bg-linear-to-r from-slate-900 to-70% to-slate-900/25 backdrop-blur-lg border-t border-slate-800 animate-in slide-in-from-top duration-300">
           <div className="px-4 py-4 sm:py-6 space-y-3 sm:space-y-4 ">
             <a href="#features" className="block text-gary-300 hover:text-white text-small lg:text-base">
               Features

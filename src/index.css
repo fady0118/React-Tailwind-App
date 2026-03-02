@@ -1,9 +1,9 @@
+@import "tailwindcss";
+
 html {
     overflow-y: scroll;
     scroll-behavior: smooth;
 }
-
-@import "tailwindcss";
 
 @layer utilities {
     .animate-in {

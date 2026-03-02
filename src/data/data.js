@@ -211,3 +211,16 @@ export const testimonials = [  {
     content:
       "Our development velocity increased by 300% since adopting this platform. It's like having a senior developer pair programming with every team member.",
   },]
+
+  export const footerLinks = {
+  Product: ["Features", "Pricing", "Security", "Roadmap", "Changelog"],
+  Company: ["About", "Blog", "Careers", "Press", "Partners"],
+  Resources: [
+    "Documentation",
+    "Help Center",
+    "Community",
+    "API Reference",
+    "Status",
+  ],
+  Legal: ["Privacy", "Terms", "Cookie Policy", "Licenses", "Compliance"],
+};

@@ -26,7 +26,7 @@ const Testimonials = () => {
                     </div>
 
                     <div className="grow">
-                      <p className="text-white text-base sm:text-lg leading-relaxed mb-3 sm:mb-4">{testimonial.content}</p>
+                      <p className="text-white text-sm md:text-base sm:text-lg leading-relaxed mb-3 sm:mb-4">{testimonial.content}</p>
                       <div className="flex items-center space-x-2 sm:space-x-3">
                         <img src={testimonial.image} alt={testimonial.name} className="w-10 h-10 sm:h-12 sm:w-12 rounded-full object-cover object-center" />
                         <div>

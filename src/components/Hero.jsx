@@ -117,7 +117,7 @@ const Hero = () => {
 
               {/* Floating Cards */}
               <div
-                className={`hidden lg:block absolute bottom-4 right-4 translate-8 w-72 rounded-lg p-4 backdrop-blur-xl border border-white/10 shadow-2xl  ${currentFloatingCard.bgColor} ${currentFloatingCard.textColor}`}
+                className={`hidden lg:block absolute bottom-4 right-4 translate-8 w-72 rounded-lg p-4 backdrop-blur-3xl border border-white/10 shadow-2xl ${currentFloatingCard.bgColor} ${currentFloatingCard.textColor}`}
               >
                 <div className="flex items-center space-x-2 mb-2">
                   <div className={`w-6 h-6 flex items-center justify-center text-sm font-bold ${currentFloatingCard.iconColor}`}>{currentFloatingCard.icon}</div>

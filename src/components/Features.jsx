@@ -1,35 +1,6 @@
-import { ChevronDown } from "lucide-react";
-const features = [
-  {
-    title: "AI Code Completion",
-    description: "Intelligent code suggestions powered by advanced AI that learns from your coding patterns. Get real-time assistance with syntax, logic, and best practices.",
-    codeSnippet: `function handleSubmit() {
-  // AI suggests next line
-  const data = await fetch("/api/submit")
-  // Auto-completed by AI
-}`,
-    imagePosition: "left",
-  },
-  {
-    title: "Automated Testing",
-    description: "Generate comprehensive test suites automatically. Our AI analyzes your code and creates unit tests, integration tests, and edge case coverage.",
-    codeSnippet: `describe("User Authentication", () => {
-  // Auto-generated tests
-  it("should login successfully", () => {
-    // Test implementation
-  })
-})`,
-    imagePosition: "right",
-  },
-  {
-    title: "Smart Debugging",
-    description: "Identify and fix bugs before they reach production. AI-powered error detection and resolution suggestions help you debug faster.",
-    codeSnippet: `// AI suggests fix:
-const result = await processData(input)
-// Fixed: Added await keyword`,
-    imagePosition: "left",
-  },
-];
+import { features } from "../data/codeExamples.js";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const Features = () => {
   return (
@@ -44,29 +15,42 @@ const Features = () => {
         </div>
         <div className="space-y-16 sm:space-y-20 lg:space-y-23">
           {features.map((feature, key) => (
-            <div key={key} className="">
+            <div key={key} className={`flex flex-col lg:flex-row items-center gap-8 sm:gap-12 ${feature.imagePosition === "right" ? "lg:flex-row-reverse" : ""}`}>
               {/* code section */}
-              <div>
-                <div>
-                  {/* Ide interface */}
-                  <div className="relative order-2 w-full sm:w-3/4 lg:w-full">
-                    <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-3 shadow-2xl border border-white/10">
-                      <div className="bg-linear-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-75 sm:h-100 lg:h-125 border border-white/5">
-                        <div className="flex items-center justify-between px-4 sm:px-4 py-2 sm:py-3 bg-white/5 backdrop-blur-sm border-b border-white/10 ">
-                          <div className="flex items-center space-x-2">
-                            <div className="flex space-x-1 sm:space-x-2 items-center">
-                              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500"></div>
-                              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500"></div>
-                              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500"></div>
-                            </div>
-                            <span className="text-xs sm:text-sm text-gray-300">CodeFlow</span>
-                          </div>
-                          <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" />
+              <div className="flex-1 w-full">
+                <div className="relative group rounded-xl sm:rounded-2xl overflow-hidden">
+                  <div className="absolute inset-0 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-xl sm:rounded-2xl transition-all duration-500"/>
+                  <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl sm:rounded-2xl p-3 sm:p-5 overflow-hidden group:border-1">
+                    {/* Ide interface */}
+                    <div className="bg-gray-950 rounded-lg p-3 sm:p-4 font-mono text-xs sm:text-sm">
+                      <div className="flex items-center space-x-1 sm:space-x-2 mb-3 sm:mb-4">
+                        <div className="flex items-center space-x-1 sm:space-x-2">
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500"></div>
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500"></div>
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500"></div>
                         </div>
+                        <span className="text-gray-400 ml-2 sm:ml-4 text-xs sm:text-sm">{feature.title}</span>
+                      </div>
+                      {/* codeblock content */}
+                      <div>
+                        <SyntaxHighlighter
+                          language="javascript"
+                          style={nightOwl}
+                          customStyle={{ margin: 0, background:"transparent", borderRadius: "0.5rem", fontSize: "0.75rem", lineHeight: 1.3, height: "100%", maxHeight: "100%" }}
+                        >
+                          {feature.codeSnippet}
+                        </SyntaxHighlighter>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
+              {/* text section */}
+              <div className="flex-1 w-full text-center lg:text-left">
+                <div className="max-w-lg mx-auto lg:mx-0 ">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">{feature.title}</h3>
+                </div>
+                <p className="text-gray-300 text-md sm:text-lg leading-relaxed">{feature.description}</p>
               </div>
             </div>
           ))}

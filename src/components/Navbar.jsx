@@ -1,5 +1,5 @@
 import { Menu, X } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

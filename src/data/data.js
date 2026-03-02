@@ -151,3 +151,63 @@ const result = await processData(input)
     imagePosition: "left",
   },
 ];
+
+export const plans = [
+  {
+    name: "Starter",
+    price: "29.99",
+    description: "Perfect for individuals and small teams",
+    features: ["Up to 5 team members", "10GB storage", "Basic analytics", "Email support", "API access", "Mobile app"],
+    mostPopular: false,
+  },
+  {
+    name: "Professional",
+    price: "79.99",
+    description: "Best for growing businesses",
+    features: ["Up to 25 team members", "100GB storage", "Advanced analytics", "Priority support", "API access", "Mobile app", "Custom integrations", "Advanced security"],
+    mostPopular: true,
+  },
+  {
+    name: "Enterprise",
+    price: "199.99",
+    description: "For large organizations",
+    features: [
+      "Unlimited team members",
+      "Unlimited storage",
+      "Enterprise analytics",
+      "24/7 phone support",
+      "API access",
+      "Mobile app",
+      "Custom integrations",
+      "Advanced security",
+      "Dedicated account manager",
+      "Custom SLA",
+    ],
+    mostPopular: false,
+  },
+];
+
+export const testimonials = [  {
+    name: "Sarah Chen",
+    role: "Senior Developer",
+    image:
+      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200",
+    content:
+      "This AI-powered development platform has revolutionized how we write code. The intelligent suggestions save us hours every day.",
+  },
+  {
+    name: "Marcus Rodriguez",
+    role: "Tech Lead",
+    image:
+      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200",
+    content:
+      "The automated testing and debugging features are game-changers. We ship code faster and with more confidence than ever before.",
+  },
+  {
+    name: "Emily Watson",
+    role: "CTO",
+    image:
+      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=200",
+    content:
+      "Our development velocity increased by 300% since adopting this platform. It's like having a senior developer pair programming with every team member.",
+  },]

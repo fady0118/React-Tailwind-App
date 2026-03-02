@@ -1,7 +1,7 @@
 import { ArrowRight, ChevronDown, Play, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { codeExamples, floatingCards } from "../data/codeExamples.js";
+import { codeExamples, floatingCards } from "../data/data.js";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const Hero = () => {

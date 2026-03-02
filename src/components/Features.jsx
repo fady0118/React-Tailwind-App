@@ -1,4 +1,4 @@
-import { features } from "../data/codeExamples.js";
+import { features } from "../data/data";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 

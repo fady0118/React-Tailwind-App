@@ -1,10 +1,5 @@
-html {
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-
 @import "tailwindcss";
-
+@plugin 'tailwind-scrollbar';
 @layer utilities {
     .animate-in {
         animation-fill-mode: both;

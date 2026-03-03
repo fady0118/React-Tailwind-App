@@ -10,3 +10,6 @@ an exercise in building a responsive, modern landing page using a component‑ba
 - Reusable components (Navbar, Hero, Features, Pricing, Testimonials, Footer)
 - Tailwind CSS with Vite for fast builds
 - Custom styled scrollbar using `tailwind-scrollbar` plugin
+
+## Live app
+<a href="https://react-tailwind-app-tau.vercel.app/">🔗React Tailwind Landing Page</a>

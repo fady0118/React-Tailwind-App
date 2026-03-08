@@ -1,21 +1,11 @@
 import { ArrowRight, ChevronDown, Play, Sparkles } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { codeExamples, floatingCards } from "../data/data.js";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const Hero = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState("App.jsx");
-
-  // hover style
-  useEffect(() => {
-    function handleMouseMove(e) {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    }
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   const tabsStyles = {
     basicStyle: `px-3 py-2 backdrop-blur-sm text-xs sm:text-xm rounded-t-lg border transition-all duration-200 hover:cursor-pointer`,
@@ -29,7 +19,6 @@ const Hero = () => {
   const currentFloatingCard = floatingCards[activeTab];
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="fixed inset-0 opacity-30" style={{ background: `radial-gradient(450px circle at ${mousePos.x}px ${mousePos.y}px, rgba(59,130,245,0.15) , transparent 40%)` }} />
 
       <div className="fixed top-20 left-4 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="fixed bottom-20 right-4 sm:right-10 w-64 sm:w-96 h-48 sm:h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>

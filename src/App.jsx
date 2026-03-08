@@ -5,6 +5,7 @@ import Pricing from "./components/Pricing";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
+import HoverEffect from "./components/utility/HoverEffect";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,6 +18,7 @@ function App() {
   }, []);
   return (
     <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
+      <HoverEffect />
       <Navbar scrolled={scrolled} />
       <Hero />
       <Features />
